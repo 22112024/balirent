@@ -316,6 +316,69 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // =============================
+  // === Слайдер для карточек на главной странице =========
+  // =============================
+  document.querySelectorAll(".card").forEach((card) => {
+    const container = card.querySelector(".card_image_svg");
+    // Выбираем только изображения с классом slider_image
+    const images = container.querySelectorAll("img.slider_image");
+    const leftBtn = card.querySelector(".card_slider_btn_left");
+    const rightBtn = card.querySelector(".card_slider_btn_right");
+
+    // Создаем контейнер для точек, если его нет
+    let dotsContainer = container.querySelector(".slider_dots");
+    if (!dotsContainer) {
+      dotsContainer = document.createElement("div");
+      dotsContainer.classList.add("slider_dots");
+      container.appendChild(dotsContainer);
+    }
+    dotsContainer.innerHTML = "";
+    images.forEach((img, index) => {
+      const dot = document.createElement("span");
+      dot.classList.add("dot");
+      if (index === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => {
+        images[currentIndex].classList.remove("active");
+        currentIndex = index;
+        images[currentIndex].classList.add("active");
+        updateDots();
+      });
+      dotsContainer.appendChild(dot);
+    });
+
+    let currentIndex = 0;
+
+    if (images.length > 0) {
+      images.forEach((img, index) => {
+        img.classList.toggle("active", index === 0);
+      });
+    }
+
+    function updateDots() {
+      const dots = dotsContainer.querySelectorAll(".dot");
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === currentIndex);
+      });
+    }
+
+    leftBtn.addEventListener("click", function (event) {
+      event.stopPropagation();
+      images[currentIndex].classList.remove("active");
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      images[currentIndex].classList.add("active");
+      updateDots();
+    });
+
+    rightBtn.addEventListener("click", function (event) {
+      event.stopPropagation();
+      images[currentIndex].classList.remove("active");
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add("active");
+      updateDots();
+    });
+  });
+
   // ============================
   // === Слайдер (галерея на странице описания) =================
   // ============================
@@ -405,6 +468,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (window.innerWidth <= 750) {
     // На мобильном скрывается модальный слайдер, а переключение происходит в блоке .main_photo
     const mainPhotoImg = document.querySelector(".main_photo img");
+    const mainPhotoContainer = document.querySelector(".main_photo");
     // Вместо изображений из .section_gallery, собираем все миниатюры из слайдерной галереи (7 фото)
     const mobileImages = Array.from(
       document.querySelectorAll(".slider_gallery .thumbnail")
@@ -412,6 +476,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let currentMobileIndex = mobileImages.indexOf(mainPhotoImg.src);
     if (currentMobileIndex === -1) currentMobileIndex = 0;
+
+    // Создаем контейнер для точек, если его еще нет в .main_photo
+    let mobileDotsContainer = mainPhotoContainer.querySelector(".slider_dots");
+    if (!mobileDotsContainer) {
+      mobileDotsContainer = document.createElement("div");
+      mobileDotsContainer.classList.add("slider_dots");
+      mainPhotoContainer.appendChild(mobileDotsContainer);
+    }
+    // Очищаем контейнер точек
+    mobileDotsContainer.innerHTML = "";
+    // Создаем точку для каждого изображения
+    mobileImages.forEach((src, index) => {
+      const dot = document.createElement("span");
+      dot.classList.add("dot");
+      if (index === currentMobileIndex) {
+        dot.classList.add("active");
+      }
+      dot.addEventListener("click", () => {
+        currentMobileIndex = index;
+        mainPhotoImg.src = mobileImages[currentMobileIndex];
+        updateMobileDots();
+      });
+      mobileDotsContainer.appendChild(dot);
+    });
+
+    function updateMobileDots() {
+      const dots = mobileDotsContainer.querySelectorAll(".dot");
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === currentMobileIndex);
+      });
+    }
 
     const mobileLeftBtn = document.querySelector(".main_slider_btn_left");
     const mobileRightBtn = document.querySelector(".main_slider_btn_right");
@@ -424,6 +519,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ? currentMobileIndex - 1
             : mobileImages.length - 1;
         mainPhotoImg.src = mobileImages[currentMobileIndex];
+        updateMobileDots();
       });
     }
 
@@ -435,9 +531,20 @@ document.addEventListener("DOMContentLoaded", function () {
             ? currentMobileIndex + 1
             : 0;
         mainPhotoImg.src = mobileImages[currentMobileIndex];
+        updateMobileDots();
       });
     }
   }
+
+  // =============================
+  // === Изменение цвета иконки STAR =========
+  // =============================
+  document.querySelectorAll(".star_icon").forEach(function (star) {
+    star.addEventListener("click", function (e) {
+      e.stopPropagation();
+      star.classList.toggle("selected");
+    });
+  });
 
   // =============================
   // === Отправка жалобы =========
@@ -489,47 +596,4 @@ document.addEventListener("DOMContentLoaded", function () {
       e.stopPropagation();
     });
   }
-});
-
-// =============================
-// === Слайдер для карточек на главной странице =========
-// =============================
-document.querySelectorAll(".card").forEach((card) => {
-  const container = card.querySelector(".card_image_svg");
-  // Выбираем только изображения с классом slider_image
-  const images = container.querySelectorAll("img.slider_image");
-  const leftBtn = card.querySelector(".card_slider_btn_left");
-  const rightBtn = card.querySelector(".card_slider_btn_right");
-
-  let currentIndex = 0;
-
-  if (images.length > 0) {
-    images.forEach((img, index) => {
-      img.classList.toggle("active", index === 0);
-    });
-  }
-
-  leftBtn.addEventListener("click", function (event) {
-    event.stopPropagation();
-    images[currentIndex].classList.remove("active");
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    images[currentIndex].classList.add("active");
-  });
-
-  rightBtn.addEventListener("click", function (event) {
-    event.stopPropagation();
-    images[currentIndex].classList.remove("active");
-    currentIndex = (currentIndex + 1) % images.length;
-    images[currentIndex].classList.add("active");
-  });
-});
-
-// =============================
-// === Изменение цвета иконки STAR =========
-// =============================
-document.querySelectorAll(".star_icon").forEach(function (star) {
-  star.addEventListener("click", function (e) {
-    e.stopPropagation();
-    star.classList.toggle("selected");
-  });
 });
