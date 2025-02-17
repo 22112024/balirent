@@ -49,31 +49,35 @@
   }
 }
 
-.nav {
+.logo {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
 }
 
-.logo {
+.information {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  padding-right: 70px;
 }
 
-.logo .tooltip {
+.information .tooltip {
   display: none;
   position: absolute;
-  bottom: -20px; /* настройте положение */
-  left: 385px;
+  width: 170px;
+  height: auto;
+  bottom: -170px;
+  left: 185px;
   transform: translateX(-50%);
   background-color: rgba(255, 255, 255, 0.8);
-  color: rgba(110, 141, 192, 0.7);
-  padding: 5px 20px;
+  color: rgba(69, 83, 111, 1);
+  padding: 20px 20px;
   border-radius: 30px;
-  white-space: nowrap;
+  white-space: wrap;
   font-size: 15px;
   z-index: 100;
   opacity: 0;
@@ -82,9 +86,16 @@
     -1px -1px 1px rgba(110, 141, 192, 0.2);
 }
 
-.logo:hover .tooltip {
+.information:hover .tooltip {
   display: block;
   opacity: 1;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 @media (max-width: 1000px) {
@@ -1408,8 +1419,8 @@
   justify-content: center;
   top: 50%;
   transform: translateY(-50%);
-  width: 35px;
-  height: 35px;
+  width: 38px;
+  height: 38px;
   color: #fff;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 50%;
@@ -1478,6 +1489,28 @@ img.star_icon {
 .star_icon.selected {
   filter: invert(54%) sepia(73%) saturate(768%) hue-rotate(0deg)
     brightness(101%) contrast(101%);
+}
+
+.card_image_svg .slider_dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+  z-index: 10;
+}
+
+.card_image_svg .slider_dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #888;
+  cursor: pointer;
+}
+
+.card_image_svg .slider_dots .dot.active {
+  background-color: #fff;
 }
 
 .body_card {
@@ -1582,7 +1615,7 @@ img.star_icon {
     grid-gap: 17px 5px;
     padding: 0;
     list-style: none;
-    font-size: 15px;
+    font-size: 16px;
     margin: auto;
   }
 
@@ -1605,7 +1638,7 @@ img.star_icon {
     grid-gap: 17px 5px;
     padding: 0;
     list-style: none;
-    font-size: 15px;
+    font-size: 16px;
     margin: auto;
   }
 
@@ -1937,6 +1970,40 @@ img.star_icon {
   border-radius: 10px;
 }
 
+.main_photo .slider_dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+  z-index: 10;
+}
+.main_photo .slider_dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #888;
+  cursor: pointer;
+}
+
+.main_photo .slider_dots .dot.active {
+  background-color: #fff;
+}
+
+.slider_btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgb(250, 251, 255);
+  border-radius: 50%;
+  border: none;
+  font-size: 30px;
+  z-index: 1007;
+}
+
 .slider_gallery_wrapper {
   display: flex;
   align-items: center;
@@ -2002,19 +2069,6 @@ img.star_icon {
 
 .slider_gallery:hover {
   scrollbar-color: rgba(49, 186, 190, 0.7) rgb(235, 247, 255); /* Меняем цвет при наведении */
-}
-
-.slider_btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  background: rgb(250, 251, 255);
-  border-radius: 50%;
-  border: none;
-  font-size: 30px;
-  z-index: 1007;
 }
 
 .slider_btn_left {
