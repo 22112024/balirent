@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baliarenda</title>
+  </head>
+  <body class="body">
+    <div class="wrapper_second_page">
+      <header class="header">
+        <div class="nav">
+          <div class="logo">
+            <a href="file:///C:/Users/Buksvager/Desktop/HTML/Bali/index.html#"
+              ><img src="img/logo.svg" alt="logo"
+            /></a>
+          </div>
+          <div class="nav_menu">
+            <div class="language_currency" id="languageSwitcher">
+              <div class="language_switcher">
+                <div class="language">
+                  <div class="russian" id="russian">RU</div>
+                  <div class="english" id="english">EN</div>
+                </div>
+              </div>
+              <div class="currency_switcher">
+                <div class="currency">
+                  <div class="usd" id="usd">USD</div>
+                  <div class="idr" id="idr">IDR</div>
+                  <div class="rub" id="rub">RUB</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu_container">
+            <div class="burger_menu" onclick="toggleMenu()">☰</div>
+            <div class="burger_list">
+              <div class="language_currency">
+                <div class="language" id="languageSwitcherMenu">
+                  <div class="russian active" onclick="switchLanguage()">
+                    RU
+                  </div>
+                  <div class="english inactive" onclick="switchLanguage()">
+                    EN
+                  </div>
+                </div>
+
+                <div class="currency" id="currencySwitcher">
+                  <div class="idr active" onclick="switchCurrency()">IDR</div>
+                  <div class="usd inactive" onclick="switchCurrency()">USD</div>
+                </div>
+
+                <div class="login">
+                  <div class="login_icon">
+                    <img src="img/login.svg" alt="Log in" />
+                  </div>
+                  <div class="login_text">Log in</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="page_discription">
+        <div class="section_gallery">
+          <div class="main_photo">
+            <img src="img/about_image7.jpg.lnk" alt="image" />
+            <button class="main_photo_slider_btn main_slider_btn_left">
+              <i class="fas fa-chevron-left"
+                ><img src="img/main_slider_btn_left.svg" alt="Close button"
+              /></i>
+            </button>
+            <button class="main_photo_slider_btn main_slider_btn_right">
+              <i class="fas fa-chevron-right"
+                ><img src="img/main_slider_btn_right.svg" alt="Close button"
+              /></i>
+            </button>
+          </div>
+          <div class="first_photo">
+            <img src="img/about_image3.jpg.lnk" alt="image" />
+          </div>
+          <div class="second_photo">
+            <img src="img/about_image5.jpg.lnk" alt="image" />
+          </div>
+          <div class="third_photo">
+            <img src="img/about_image4.jpg.lnk" alt="image" />
+          </div>
+          <div class="fourth_photo">
+            <img src="img/about_image10.jpg.lnk" alt="image" />
+          </div>
+        </div>
+
+        <div class="slider">
+          <div class="slider_container">
+            <div class="slider_main_photo">
+              <img id="mainPhoto" src="" alt="Main Photo" />
+            </div>
+            <div class="slider_gallery_wrapper">
+              <div class="slider_gallery">
+                <div class="slider_gallery_first">
+                  <img
+                    src="img/about_image7.jpg.lnk"
+                    alt="Thumbnail 1"
+                    class="thumbnail"
+                  />
+                </div>
+                <div class="slider_gallery_second">
+                  <img
+                    src="img/about_image3.jpg.lnk"
+                    alt="Thumbnail 2"
+                    class="thumbnail"
+                  />
+                </div>
+                <div class="slider_gallery_third">
+                  <img
+                    src="img/about_image5.jpg.lnk"
+                    alt="Thumbnail 3"
+                    class="thumbnail"
+                  />
+                </div>
+                <div class="slider_gallery_fourth">
+                  <img
+                    src="img/about_image4.jpg.lnk"
+                    alt="Thumbnail 4"
+                    class="thumbnail"
+                  />
+                </div>
+                <div class="slider_gallery_fifth">
+                  <img
+                    src="img/about_image10.jpg.lnk"
+                    alt="Thumbnail 5"
+                    class="thumbnail"
+                  />
+                </div>
+                <div class="slider_gallery_sixth">
+                  <img
+                    src="img/about_image11.jpg.lnk"
+                    alt="Thumbnail 6"
+                    class="thumbnail"
+                  />
+                </div>
+                <div class="slider_gallery_seventh">
+                  <img
+                    src="img/about_image8.jpg.lnk"
+                    alt="Thumbnail 7"
+                    class="thumbnail"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <button class="slider_close">
+              <i class="far fa-times-circle"
+                ><img src="img/close_button.svg" alt="Close button"
+              /></i>
+            </button>
+            <button class="slider_btn slider_btn_left">
+              <i class="fas fa-chevron-left"
+                ><img src="img/button_left.svg" alt="Close button"
+              /></i>
+            </button>
+            <button class="slider_btn slider_btn_right">
+              <i class="fas fa-chevron-right"
+                ><img src="img/button_right.svg" alt="Close button"
+              /></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="section_sidebar">
+          <div class="sidebar_container">
+            <div class="sidebar_price">
+              <span>17 млн. IDR / месяц</span>
+            </div>
+            <div class="sidebar_separator_top"></div>
+            <div class="sidebar_district">
+              <img
+                src="img/district.svg"
+                alt="District icon"
+                class="search_icon district_icon"
+              />
+              <div>
+                <p class="paragraph_district">Район</p>
+                <p class="paragraph_name">Берава</p>
+              </div>
+            </div>
+
+            <div class="sidebar_type">
+              <img
+                src="img/house.svg"
+                alt="Home icon"
+                class="search_icon home_icon"
+              />
+              <div>
+                <p class="paragraph_type">Тип жилья</p>
+                <p class="paragraph_name">Квартира</p>
+              </div>
+            </div>
+            <div class="sidebar_rooms">
+              <img
+                src="img/rooms.svg"
+                alt="Room icon"
+                class="search_icon room_icon"
+              />
+              <div>
+                <p class="paragraph_rooms">Комнаты</p>
+                <p class="paragraph_name">2 комнаты</p>
+              </div>
+            </div>
+            <div class="sidebar_id">
+              <img
+                src="img/id.svg"
+                alt="Home icon"
+                class="search_icon home_icon"
+              />
+              <div>
+                <p class="paragraph_id">ID</p>
+                <p class="paragraph_name">1717177117</p>
+              </div>
+            </div>
+            <div class="sidebar_published">
+              <img
+                src="img/add.svg"
+                alt="Home icon"
+                class="search_icon home_icon"
+              />
+              <div>
+                <p class="paragraph_published">Добавлено</p>
+                <p class="paragraph_name">17.07.2025</p>
+              </div>
+            </div>
+            <div class="sidebar_update">
+              <img
+                src="img/update.svg"
+                alt="Home icon"
+                class="search_icon home_icon"
+              />
+              <div>
+                <p class="paragraph_update">Обновлено</p>
+                <p class="paragraph_name">17.07.2025</p>
+              </div>
+            </div>
+            <div class="sidebar_separator_buttom"></div>
+            <div class="sidebar_link">
+              <div class="feedback_link">
+                <div class="feedback_link_telegram">
+                  <span>Ссылка на публикацию</span>
+                  <button
+                    class="form_button"
+                    onclick="openLink('https://t.me/baliarenda_group')"
+                  >
+                    <img src="img/sendcomplain.svg" alt="Send" />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="sidebar_complaint">
+              <a href="#" id="complaintLink">Сообщить об ошибке</a>
+              <div class="complaint_overlay" id="complaintOverlay"></div>
+              <div class="complaint_menu" id="complaintMenu">
+                <div
+                  class="close_complaint_button"
+                  onclick="closeComplaintMenu()"
+                >
+                  <img src="img/close_button.svg" alt="Close button" />
+                </div>
+                <form class="complaint_form" method="post">
+                  <div class="complaint_field_top">
+                    <input type="text" id="email" name="email" required />
+                    <label for="email">Email</label>
+                    <span></span>
+                  </div>
+                  <div class="complaint_field_buttom">
+                    <textarea
+                      id="sendComplaint"
+                      name="sendComplaint"
+                      required
+                    ></textarea>
+                    <label for="email"></label>
+                    <span></span>
+                  </div>
+                  <input type="submit" value="Отправить" />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section_main">
+          <div class="section_discription">
+            <div class="discription_title">Описание объекта</div>
+
+            <div class="discription_text">
+              📍Переренан, 3 спальни Стильная, двухэтажная вилла с видом на
+              джунгли 🌴 🔥Свободна с 10 января 3 спальни, 3 ванные
+              комнаты, Оборудованная кухня, Smart TV, Стиральная машина, Частный
+              бассейн ✅ Включено: Wi-Fi 200 мбит, уборка 2 раза в нед.,
+              обслуживание бассейна, территории 1 раз в нед. 💰Цена: 55
+              млн./мес. (3400$) 📹 Видео в лс Для бронирования виллы и по любым
+              вопросам писать: @helene_bali #3br #pererenan #41
+            </div>
+            <div class="discription_hashtag">
+              <ul>
+                <li>#джунгли</li>
+                <li>#бассейн</li>
+                <li>#уборка</li>
+              </ul>
+            </div>
+
+            <div class="discription_info">
+              <div class="discription_content">
+                <div class="main_avatar">
+                  <img src="img/main_offer.jpg" alt="Contact" />
+                </div>
+                <div class="main_text">
+                  <div class="main_name">Alina Swiss</div>
+                  <div class="main_nic">@alina_swiss</div>
+                </div>
+                <div class="main_button">
+                  <span class="main_button_text">Связаться</span>
+                  <span class="main_button_icon">
+                    <img
+                      src="img/contacts.svg"
+                      alt="Connect Icon"
+                      class="icon_image"
+                    />
+                  </span>
+                </div>
+              </div>
+              <div class="discription_separator_bottom"></div>
+            </div>
+          </div>
+
+          <div class="discription_offer">
+            <div class="offer_title">Альтернативные предложения</div>
+            <div class="offer_text">
+              <div class="offer_first">
+                <div class="offer_avatar">
+                  <img src="img/main_offer.jpg" alt="Contact" />
+                </div>
+                <div class="offer_info">
+                  <div class="offer_name">Alina Swiss</div>
+                  <div class="offer_date">17.01.2025</div>
+                </div>
+              </div>
+              <div class="offer_second">
+                <div class="offer_avatar">
+                  <img src="img/main_offer.jpg" alt="Contact" />
+                </div>
+                <div class="offer_info">
+                  <div class="offer_name">Alina Swiss</div>
+                  <div class="offer_date">17.01.2025</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section_map">
+          <div class="map_container">
+            <img src="img/about_image.jpg" alt="Map" />
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <ul class="footer_list">
+          <li>
+            <span class="footerd_baliarenda_left">Baliarenda.com</span>
+            <span class="footerd_baliarenda_right">
+              — долгосрочная аренда жилья на Бали</span
+            >
+          </li>
+
+          <li></li>
+          <li>
+            <img
+              src="img/telegram.svg"
+              alt="Support"
+              class="footer_channel"
+            />Телеграм канал
+          </li>
+          <li>
+            <img
+              src="img/telegram.svg"
+              alt="Terms and conditions"
+              class="footer_bot"
+            />Телеграм бот
+          </li>
+        </ul>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
