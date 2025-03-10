@@ -177,8 +177,8 @@ document.addEventListener("DOMContentLoaded", function () {
     .querySelectorAll('.rooms_menu .input_fields input[type="number"]')
     .forEach((input) => {
       input.addEventListener("input", function () {
-        if (this.value.length > 3) {
-          this.value = this.value.slice(0, 3);
+        if (this.value.length > 1) {
+          this.value = this.value.slice(0, 1);
         }
       });
     });
