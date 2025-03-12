@@ -1907,6 +1907,11 @@
   padding-left: 20px;
 }
 
+.footer_list li a {
+  text-decoration: none;
+  color: white;
+}
+
 .footer_list li img {
   vertical-align: middle;
   cursor: pointer;
@@ -2725,6 +2730,11 @@
   margin-bottom: 15px;
 }
 
+.sidebar_id a {
+  text-decoration: none;
+  color: black;
+}
+
 .paragraph_name {
   font-weight: 500;
   margin: 0;
@@ -3259,8 +3269,18 @@
     display: none;
   }
 
+  .section_main {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .section_discription {
+    width: 90%;
+    max-width: 90%;
+  }
+
   .sidebar_price {
-    width: 50%;
+    width: 70%;
     margin: 0 auto;
     text-align: left;
     white-space: nowrap;
@@ -3270,7 +3290,7 @@
   .sidebar_update,
   .sidebar_id,
   .sidebar_link {
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
     text-align: left;
     white-space: nowrap;
